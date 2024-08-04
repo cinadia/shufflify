@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+
+.container {
+    text-align: center;
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+    height: 100%;
+    background-color: #333;
+    color: #eee;
+    font-family: Helvetica, Arial;
+    font-size: 3vmin;
   }
+
+.spotify-button {
+    background-color:#44c767;
+    border-radius:28px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    padding:16px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main-wrapper {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    position: relative;
+    width: 80%;
+    z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.playlists {
+    padding-top: 45px;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    position: relative;
+    width: 80%;
+    z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.playlist-item {
+    padding-bottom: 25px;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.now-playing__name {
+    font-size: 1.5em;
+    margin-bottom: 0.2em;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .now-playing__artist {
+    margin-bottom: 1em;
   }
-}
+  
+  .now-playing__status {
+    margin-bottom: 1em;
+  }
+  
+  .now-playing__cover {
+    border-radius: 8px;
+    float: left;
+    margin-right: 10px;
+    text-align: right;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .now-playing__side {
+    margin-left: 2%;
+    width: 45%;
+  } 
+
+
+
+/* .login {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}*/

@@ -92,7 +92,7 @@ function WebPlayback() {
             const local_playlists = localStorage.getItem('playlists');
 
             if (local_playlists) {
-                JSON.parse(local_playlists)                
+                setPlaylists(JSON.parse(local_playlists));     
             }
 
             // install the SDK
@@ -178,15 +178,18 @@ function WebPlayback() {
                             <div className="now-playing__name">{current_track.name}</div>
                             <div className="now-playing__artist">{current_track.artists[0].name}</div>
 
-                            <button className="btn-spotify" onClick={() => { player.previousTrack() }} >
+                            <button className="spotify-button" onClick={() => { player.previousTrack() }} >
                                 &lt;&lt;
                             </button>
 
-                            <button className="btn-spotify" onClick={() => { player.togglePlay() }} >
+                            <button className="spotify-button" onClick={() => { 
+                                player.togglePlay() 
+                                console.log(playlists)
+                                }} >
                                 { is_paused ? "PLAY" : "PAUSE" }
                             </button>
 
-                            <button className="btn-spotify" onClick={() => { player.nextTrack() }} >
+                            <button className="spotify-button" onClick={() => { player.nextTrack() }} >
                                 &gt;&gt;
                             </button>
                         </div>
@@ -197,14 +200,15 @@ function WebPlayback() {
                             <br></br>
                             <ul>
                                 {playlists.map((playlist) => (
-                                <li key={playlist.id}>
-                                    <button onClick={() => { 
-                                            player.pause()
-                                            console.log('playlist id: ', playlist.id)
-                                            getPlaylistItems(playlist.id, access_token, player)
-                                        }}>
-                                        {"Shuffle and play " + playlist.name}
-                                    </button></li>
+                                    <li className="playlist-item" key={playlist.id}>
+                                        <button onClick={() => { 
+                                                player.pause()
+                                                console.log('playlist id: ', playlist.id)
+                                                getPlaylistItems(playlist.id, access_token, player)
+                                            }}>
+                                            {"Shuffle and play " + playlist.name}
+                                        </button>
+                                    </li>
                                 ))}
                             </ul>
                     </div>

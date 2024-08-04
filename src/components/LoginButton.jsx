@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-const client_id = 'c5f0af3c02424ce4bbcfa17926290146';
+const client_id = 'c5f0af3c02424ce4bbcfa17926290146'; // TODO: use dotenv for client id?? how to handle this?
 const redirect_uri = 'http://localhost:3000'; // TODO: update redirect uri when deploying
 
 export default class LoginButton extends Component {
     render() {
         return (
-            <div>
-                <button id="login-button" onClick={() => this.redirectToSpotifyAuthorizeEndpoint()}>Log in with Spotify</button>
+            <div className="container">
+                {/* <div className="login"> */}
+                <button className="spotify-button" onClick={() => this.redirectToSpotifyAuthorizeEndpoint()}>Log in with Spotify</button>
+                {/* </div> */}
             </div>
         );
     };
